@@ -43,5 +43,5 @@ app.get('/*', (req,res)=> {
 
 mongoose.connection.once('open', () => {
     console.log('db is connected...');
-    app.listen(PORT, () => console.log(`Server is running on http://${hostname}:${PORT}`))
+    app.listen(PORT, () => console.log(`Server is running on ${PORT}`))
 })

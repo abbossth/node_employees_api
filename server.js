@@ -9,7 +9,6 @@ const mongoose = require('mongoose')
 
 // deployment config
 const PORT = process.env.PORT || 6060
-const hostname = '127.0.0.1'
 
 mongoose.set('strictQuery', false)
 // connect to mongodb
@@ -44,5 +43,5 @@ app.get('/*', (req,res)=> {
 
 mongoose.connection.once('open', () => {
     console.log('db is connected...');
-    app.listen(PORT, hostname, () => console.log(`Server is running on http://${hostname}:${PORT}`))
+    app.listen(PORT, () => console.log(`Server is running on http://${hostname}:${PORT}`))
 })
